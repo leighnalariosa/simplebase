@@ -6,6 +6,12 @@
     --color-headings: rgb(0 0 0 / 1);
     --color-links: rgb(51 102 204 / 1); 
     --color-links-dark: rgb(0 51 153 / 1);
+    --color-brand-color: rgb(234, 185, 224);
+    --color-accent-color: rgb(230, 163, 40);
+
+    /* BASE TYPOGHRAPHY */
+    --font-body: Helvetica, Arial, sans-serif;
+    --font-headings: Georgia, sans-serif; 
 
 }
 
@@ -22,4 +28,31 @@ a {
 }
 a:hover {
     color: var(--color-links-dark); 
+}
+
+/* SET GLOBAL TYPOGRAPHY */
+body {
+    font-family: var(--font-body);
+    line-height: 1.5; 
+}
+h1, h2, h3 {
+    font-family: var(--font-headings); 
+}
+p {
+    max-width: 60ch; 
+}
+
+/* BESPOKE TYPE BLOCK: HEADLINE AND SUB HEADLINE */
+.headline {
+    font-size: 4rem;
+    color: var(--color-brand-color); 
+    margin: 1rem 0;
+    line-height: 1; 
+}
+.subheadline {
+    font-size: 2rem;
+    font-style: italic; 
+    font-weight: normal; 
+    color: var(--color-accent-color);
+    margin: 0;
 }
