@@ -1,3 +1,27 @@
+/* 
+CSS TABLE OF CONTENTS 
+
+# GLOBAL
+    # GLOBAL RESETS 
+    # GLOBAL VARIABLES (CUSTOM PROPERTIES)
+    # GLOBAL COLORS 
+    # GLOBAL TYPOGRAPHY
+
+#LAYOUT
+    # MEDIA QUERIES (w/RESPONSIVE TYPOGRAPHY) 
+    # CONTAINER 
+    # GRID 
+
+# CUSTOM STYLING 
+    # CUSTOM TYPE BLOCK/SPECIMEN 
+
+*/
+
+/* ------------------------ */
+/* ---- GLOBAL STYLING ---- */
+/* ------------------------ */
+
+/* SET GLOBAL VARIABLES */
 :root {
 
     /* BASE COLORS */
@@ -13,7 +37,16 @@
     --font-body: Helvetica, Arial, sans-serif;
     --font-headings: Georgia, sans-serif; 
 
+    /* MEASUREMENT UNITS  */
+    --gridgap: 2em; 
+
 }
+
+/* GLOBAL RESETS */
+body {
+    margin: 0; 
+}
+* { box-sizing: border-box; }
 
 /* SET GLOBAL COLORS */
 body {
@@ -42,15 +75,72 @@ p {
     max-width: 60ch; 
 }
 
-/* BESPOKE TYPE BLOCK: HEADLINE AND SUB HEADLINE */
+/* MEDIA QUERIES WITH RESPONSIVE TECHNOLOGY */
+
+body {
+    font-size: 87.5%;
+}
+
+@media (min-width:768px) {
+    body {
+        font-size: 100%;
+    }
+}
+
+@media (min-width: 1250px) {
+    body {
+        font-size: 112.5%;
+    }
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+/* GRID-SYSTEM */
+.row {
+    display: flex; 
+    gap: var(--gridgap); 
+}
+
+.column {
+    flex-grow: 1;
+}
+
+.one-half { width: 50%; }
+.one-third { width: 33.3333%; }
+
+/* FOR DEMO GRID ONLY */
+.demo .row {
+    margin-bottom: var(--gridgap)
+}
+
+.demo .column {
+    background: rgb(0 0 0 / .1);
+    padding: 1em; 
+    text-align: center; 
+}
+
+.demo p {
+    margin: 0; 
+    max-width: none; 
+}
+
+/* ------------------------ */
+/* ---- CUSTOM STYLING ---- */
+/* -------------------------*/
+
+/* CUSTOM TYPE BLOCK: HEADLINE AND SUB HEADLINE */
 .headline {
-    font-size: 4rem;
+    font-size: 4em;
     color: var(--color-brand-color); 
-    margin: 1rem 0;
+    margin: 1em 0;
     line-height: 1; 
 }
 .subheadline {
-    font-size: 2rem;
+    font-size: 2em;
     font-style: italic; 
     font-weight: normal; 
     color: var(--color-accent-color);
