@@ -17,62 +17,49 @@ CSS TABLE OF CONTENTS
 
 */
 
-/* ------------------------ */
-/* ---- GLOBAL STYLING ---- */
-/* ------------------------ */
-
-/* SET GLOBAL VARIABLES */
-:root {
-
-    /* BASE COLORS */
-    --color-body-background: rgb(255, 255, 255);
-    --color-body-text: rgb(0 0 0 / .8);
-    --color-headings: rgb(0 0 0 / 1);
-    --color-links: rgb(51 102 204 / 1); 
-    --color-links-dark: rgb(0 51 153 / 1);
-    --color-brand-color: rgb(234, 185, 224);
-    --color-accent-color: rgb(230, 163, 40);
-
-    /* BASE TYPOGHRAPHY */
-    --font-body: Helvetica, Arial, sans-serif;
-    --font-headings: Georgia, sans-serif; 
-
-    /* MEASUREMENT UNITS  */
-    --gridgap: 2em; 
-
-}
-
 /* GLOBAL RESETS */
 body {
-    margin: 0; 
+    margin: 0;
 }
-* { box-sizing: border-box; }
+
+* {
+    box-sizing: border-box;
+}
 
 /* SET GLOBAL COLORS */
 body {
     background: var(--color-body-background);
-    color: var(--color-body-text); 
+    color: var(--color-body-text);
 }
-h1, h2, h3 {
-    color: var(--color-headings); 
+
+h1,
+h2,
+h3 {
+    color: var(--color-headings);
 }
+
 a {
-    color: var(--color-links); 
+    color: var(--color-links);
 }
+
 a:hover {
-    color: var(--color-links-dark); 
+    color: var(--color-links-dark);
 }
 
 /* SET GLOBAL TYPOGRAPHY */
 body {
     font-family: var(--font-body);
-    line-height: 1.5; 
+    line-height: 1.5;
 }
-h1, h2, h3 {
-    font-family: var(--font-headings); 
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-headings);
 }
+
 p {
-    max-width: 60ch; 
+    max-width: 60ch;
 }
 
 /* MEDIA QUERIES WITH RESPONSIVE TECHNOLOGY */
@@ -95,37 +82,71 @@ body {
 
 /* CONTAINER */
 .container {
-    max-width: 1200px; 
-    margin: 0 auto; 
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* GRID-SYSTEM */
 .row {
-    display: flex; 
-    gap: var(--gridgap); 
+    --gridgap: 2em;
 }
 
-.column {
-    flex-grow: 1;
+@media (min-width: 768px) {
+    .row {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--gridgap);
+    }
 }
 
-.one-half { width: 50%; }
-.one-third { width: 33.3333%; }
+.one-whole {
+    grid-column: span 12 / span 12;
+}
+
+.one-half {
+    grid-column: span 6 / span 6;
+}
+
+.one-third {
+    grid-column: span 4 / span 4;
+}
+
+.two-thirds {
+    grid-column: span 8 / span 8;
+}
+
+.one-fourth {
+    grid-column: span 3 / span 3;
+}
+
+.three-fourths {
+    grid-column: span 9 / span 9
+}
+
+.one-half.centered {
+    grid-column-start: 4;
+}
+
+.one-third.centered {
+    grid-column-start: 5;
+}
+
+.two-thirds.centered {
+    grid-column-start: 3;
+}
 
 /* FOR DEMO GRID ONLY */
-.demo .row {
+
+.demo .row>* {
+    background: rgb(0 0 0 / .1);
+    padding: 1em;
+    text-align: center;
     margin-bottom: var(--gridgap)
 }
 
-.demo .column {
-    background: rgb(0 0 0 / .1);
-    padding: 1em; 
-    text-align: center; 
-}
-
 .demo p {
-    margin: 0; 
-    max-width: none; 
+    margin: 0;
+    max-width: none;
 }
 
 /* ------------------------ */
@@ -135,14 +156,40 @@ body {
 /* CUSTOM TYPE BLOCK: HEADLINE AND SUB HEADLINE */
 .headline {
     font-size: 4em;
-    color: var(--color-brand-color); 
+    color: var(--color-brand-color);
     margin: 1em 0;
-    line-height: 1; 
+    line-height: 1;
 }
+
 .subheadline {
     font-size: 2em;
-    font-style: italic; 
-    font-weight: normal; 
+    font-style: italic;
+    font-weight: normal;
     color: var(--color-accent-color);
     margin: 0;
+}
+
+/* ------------------------ */
+/* ---- GLOBAL STYLING ---- */
+/* ------------------------ */
+
+/* SET GLOBAL VARIABLES */
+:root {
+
+    /* BASE COLORS */
+    --color-body-background: rgb(255, 255, 255);
+    --color-body-text: rgb(0 0 0 / .8);
+    --color-headings: rgb(0 0 0 / 1);
+    --color-links: rgb(51 102 204 / 1);
+    --color-links-dark: rgb(0 51 153 / 1);
+    --color-brand-color: rgb(234, 185, 224);
+    --color-accent-color: rgb(230, 163, 40);
+
+    /* BASE TYPOGHRAPHY */
+    --font-body: Helvetica, Arial, sans-serif;
+    --font-headings: Georgia, sans-serif;
+
+    /* MEASUREMENT UNITS  */
+    --gridgap: 2em;
+
 }
