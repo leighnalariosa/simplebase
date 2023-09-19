@@ -11,7 +11,15 @@ CSS TABLE OF CONTENTS
 #LAYOUT
     # MEDIA QUERIES (w/RESPONSIVE TYPOGRAPHY) 
     # CONTAINER 
-    # GRID 
+    # GRID (ROWS & COLUMNS)
+
+# PAGE STRUCTURE ( BASE TEMPLATE)
+    # HEADER 
+        # SITE LOGO
+        # SITE NAV 
+    # MAIN
+        # SECTIONS
+    # FOOTER
 
 # CUSTOM STYLING 
     # CUSTOM TYPE BLOCK/SPECIMEN 
@@ -173,9 +181,69 @@ img {
     max-width: none;
 }
 
-/* ------------------------ */
-/* ---- CUSTOM STYLING ---- */
-/* -------------------------*/
+/* -------------------------------- */
+/* -------- PAGE STRUCTURE -------- */
+/* -------------------------------- */
+
+.site-header {
+    background-color: var(--color-header-bg);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header .site-logo {
+    display: flex;
+    gap: 1em;
+}
+
+.site-header img {
+    display: block;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.site-header a {
+    text-decoration: none;
+}
+
+.site-header .site-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+.site-header .site-nav a {
+    display: block;
+    padding: 1em;
+}
+
+.site-main {
+    background-color: #affbff;
+}
+
+.site-footer {
+    background-color: var(--color-footer-bg);
+    padding: 6em 0;
+}
+
+.site-footer .site-nav ul {
+    list-style: none;
+    margin-top: 4em;
+}
+
+.site footer a {
+    text-decoration: none;
+
+}
+
+/* -------------------------------- */
+/* -------- CUSTOM STYLING -------- */
+/* -------------------------------- */
 
 /* CUSTOM TYPE BLOCK: HEADLINE AND SUB HEADLINE */
 .headline {
@@ -208,6 +276,10 @@ img {
     --color-links-dark: rgb(0 51 153 / 1);
     --color-brand-color: rgb(234, 185, 224);
     --color-accent-color: rgb(230, 163, 40);
+    --color-header-bg: rgb(0 0 0 / .1);
+    --color-footer-bg: rgb(0 0 0 / .2);
+
+
 
     /* BASE TYPOGHRAPHY */
     --font-body: Helvetica, Arial, sans-serif;
