@@ -26,6 +26,39 @@ CSS TABLE OF CONTENTS
 
 */
 
+/* ------------------------ */
+/* ---- GLOBAL STYLING ---- */
+/* ------------------------ */
+
+/* SET GLOBAL VARIABLES */
+:root {
+
+    /* BASE COLORS */
+    --color-body-background: rgb(255, 255, 255);
+    --color-body-text: rgb(0 0 0 / .8);
+    --color-headings: rgb(0 0 0 / 1);
+    --color-links: rgb(51 102 204 / 1);
+    --color-links-dark: rgb(255, 0, 149);
+    --color-brand-color: rgb(255, 141, 232);
+    --color-accent-color: rgb(230, 163, 40);
+    --color-header-bg: rgb(116, 114, 220);
+    --color-header-links: rgb(255, 255, 255);
+    --color-header-links-hover: rgb(107, 5, 107);
+    --color-footer-bg: rgb(116, 114, 220);
+    --color-footer-heading: rgb(255, 255, 255);
+    --color-footer-text: rgb(255, 255, 255);
+    --color-footer-links: rgb(255, 207, 237);
+    --color-footer-links-hover: rgb(107, 5, 107);
+
+    /* BASE TYPOGHRAPHY */
+    --font-body: Helvetica, Arial, sans-serif;
+    --font-headings: Georgia, sans-serif;
+
+    /* MEASUREMENT UNITS  */
+    --gridgap: 2em;
+
+}
+
 /* GLOBAL RESETS */
 body {
     margin: 0;
@@ -212,6 +245,7 @@ img {
 
 .site-header .site-logo {
     display: flex;
+    align-items: center;
     gap: 1em;
 }
 
@@ -226,6 +260,11 @@ img {
 
 .site-header a {
     text-decoration: none;
+    color: var(--color-header-links)
+}
+
+.site-header a:hover {
+    color: var(--color-header-links-hover);
 }
 
 .site-header .site-nav ul {
@@ -251,14 +290,14 @@ section {
 
 /* HERO SECTION */
 .hero {
-    background: pink;
+    background: rgb(251, 203, 255);
 }
-
 
 /* SITE FOOTER */
 .site-footer {
     background-color: var(--color-footer-bg);
     padding: 6em 0;
+    color: var(--color-footer-text);
 }
 
 .site-footer .site-nav ul {
@@ -269,6 +308,17 @@ section {
 
 .site-footer a {
     text-decoration: none;
+    color: var(--color-footer-links);
+}
+
+.site-footer a:hover {
+    color: var(--color-footer-links-hover);
+}
+
+.site-footer h1,
+.site-footer h2,
+.site-footer h3 {
+    color: var(--color-footer-heading)
 }
 
 /* -------------------------------- */
@@ -289,33 +339,4 @@ section {
     font-weight: normal;
     color: var(--color-accent-color);
     margin: 0;
-}
-
-/* ------------------------ */
-/* ---- GLOBAL STYLING ---- */
-/* ------------------------ */
-
-/* SET GLOBAL VARIABLES */
-:root {
-
-    /* BASE COLORS */
-    --color-body-background: rgb(255, 255, 255);
-    --color-body-text: rgb(0 0 0 / .8);
-    --color-headings: rgb(0 0 0 / 1);
-    --color-links: rgb(51 102 204 / 1);
-    --color-links-dark: rgb(0 51 153 / 1);
-    --color-brand-color: rgb(234, 185, 224);
-    --color-accent-color: rgb(230, 163, 40);
-    --color-header-bg: rgb(0 0 0 / .1);
-    --color-footer-bg: rgb(0 0 0 / .2);
-
-
-
-    /* BASE TYPOGHRAPHY */
-    --font-body: Helvetica, Arial, sans-serif;
-    --font-headings: Georgia, sans-serif;
-
-    /* MEASUREMENT UNITS  */
-    --gridgap: 2em;
-
 }
